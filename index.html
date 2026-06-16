@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Охотник за Ценами — Сравнение цен по магазинам России</title>
+  <meta name="description" content="Быстрый поиск и сравнение цен на товары по всем популярным магазинам России: Wildberries, Ozon, Яндекс Маркет, DNS, Авито и другим.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="container">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="header">
+      <div class="header__logo">
+        <span class="header__icon">🎯</span>
+        <h1 class="header__title">Охотник за Ценами</h1>
+      </div>
+      <p class="header__subtitle">
+        Введите название товара — мы найдём его во всех магазинах России
+      </p>
+      <div class="header__region">
+        📍 Регион: <strong>г. Казань</strong>
+      </div>
+    </header>
+
+    <!-- ═══ SEARCH ═══ -->
+    <section class="search" id="search-section">
+      <form class="search__form" id="search-form" autocomplete="off">
+        <div class="search__input-wrapper">
+          <input
+            type="text"
+            class="search__input"
+            id="search-input"
+            placeholder="Что ищем? Например: iPhone 16, кроссовки Nike, молоко..."
+            autofocus
+          >
+          <span class="search__input-icon">🔍</span>
+        </div>
+        <button type="submit" class="search__btn" id="search-btn">
+          Найти
+        </button>
+      </form>
+
+      <!-- Category & Meta -->
+      <div class="search__meta" id="category-area" style="display: none;">
+        <div class="search__category">
+          <span class="search__category-label">Категория:</span>
+          <span class="search__category-badge" id="category-badge" style="display: none;"></span>
+          <select class="search__category-select" id="category-select">
+            <option value="auto">🤖 Авто-определение</option>
+            <option value="electronics">💻 Электроника</option>
+            <option value="food">🥛 Продукты</option>
+            <option value="clothing">👗 Одежда и обувь</option>
+            <option value="auto_vehicles">🚗 Авто</option>
+            <option value="construction">🔨 Стройматериалы</option>
+            <option value="sports">⚽ Спорт</option>
+            <option value="beauty">💄 Красота и здоровье</option>
+            <option value="kids">🧸 Детские товары</option>
+            <option value="furniture">🛋️ Мебель и интерьер</option>
+            <option value="books">📚 Книги и хобби</option>
+            <option value="pets">🐾 Зоотовары</option>
+          </select>
+        </div>
+        <span class="search__store-count" id="store-count" style="display: none;"></span>
+      </div>
+
+      <div class="kbd-hint">
+        <kbd>Ctrl</kbd> + <kbd>K</kbd> — быстрый фокус на поиск
+      </div>
+    </section>
+
+    <!-- ═══ HISTORY ═══ -->
+    <section class="history" id="history-section" style="display: none;">
+      <div class="history__title">
+        📋 Недавние поиски
+      </div>
+      <div class="history__list" id="history-list"></div>
+    </section>
+
+    <!-- ═══ EMPTY STATE ═══ -->
+    <div class="empty-state" id="empty-state">
+      <div class="empty-state__icon">🛍️</div>
+      <h2 class="empty-state__title">Начните поиск</h2>
+      <p class="empty-state__text">
+        Введите название товара, и мы покажем его во всех популярных магазинах России — от Wildberries до DNS
+      </p>
+    </div>
+
+    <!-- ═══ RESULTS ═══ -->
+    <section class="results" id="results-section" style="display: none;">
+      <div id="results-content"></div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+      <p class="footer__text">
+        Охотник за Ценами — бесплатный агрегатор ссылок на магазины России • 2025
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- ═══ POPUP ═══ -->
+  <div class="popup" id="popup"></div>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/categories.js"></script>
+  <script src="js/stores.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
